@@ -1,0 +1,263 @@
+.playlist{
+    border-top-left-radius: 20px;
+    width: 400px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 100px;
+    background-color: #fff;
+    padding: 30px 0;
+    overflow: scroll;
+    .title_playlist{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        margin: 0 30px 30px 30px;
+        .name_playlist{
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .more_playlist{
+            color: #787887;
+            font-size: 1.4rem;
+        }
+    }
+    .musics{
+        max-height: 200px;
+        overflow: scroll;
+        .tracks{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            cursor: pointer;
+            .first_tracks{
+                display: flex;
+                align-items: center;
+                .index_tracks{
+                    color: #787887;
+                    margin-right: 15px;
+                }
+                .name_music{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .name_tracks{
+                    padding: 4px 0;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    max-width: 160px;
+                    white-space: nowrap; 
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                }
+                .name_artists{
+                    padding: 4px 0;
+                    font-size: 1.3rem;
+                    color: var(--text-color);
+                    max-width: 200px;
+                    white-space: nowrap; 
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                }
+            }
+            .end_tracks{
+                display: flex;
+                align-items: center;
+                .timer_tracks{
+                    font-size: 1.4rem;
+                    margin-right: 24px;
+                }
+                svg{
+                    cursor: pointer;
+                }
+            }
+            .image_tracks{
+                margin: 10px 8px 10px 0;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    object-fit: contain;
+                    border-radius: 14px;
+                }
+            }
+        }
+        .tracks.active{
+            background-color: #F0F0F5;
+        }
+    }
+    .line_border{
+        height: 1px;
+        background-color: #E8E8FD;
+        margin: 8px 24px;
+    }
+    .playing_music{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title_playing{
+            margin: 16px 0;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .image_playing{
+            img{
+                width: 200px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 20px;
+                background-color: #D6D6D6;
+            }
+        }
+        .name_playing{
+            margin-top: 11px;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .artists_playing{
+            margin-top: 11px;
+            font-size: 14px;
+        }
+        .music_seek_bar{
+            margin-top: 10px;
+            width: 100%;
+            top: -4px;
+            height: 8px;
+            background-color: yellow;
+            overflow: hidden;
+        }
+    }
+}
+.tracks:hover{
+    background-color: #F0F0F5;
+}
+//
+.playing_audio{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.background_progress{
+    width: 80%;
+    -webkit-appearance: none;
+    height: 4px;
+    background: #e9e9fe;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+.background_progress::-webkit-slider-thumb{
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 4px;
+    background-color: #e9e9fe;
+    cursor: pointer;
+}
+.progress {
+    -webkit-appearance: none;
+    position: absolute;
+    height: 4px;
+    background: var(--primary-color);
+    outline: none;
+    border-radius: 8px;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 4px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+.progress::before{
+    right: 0;
+    position: absolute;
+    content: "";
+    display: inherit;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+.progress:hover {
+    cursor: pointer;
+}
+.playing_timer{
+    width: 80%;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #787887;
+}
+.current_time{
+    color: var(--primary-color);
+}
+.btn_icon_song{
+    width: 80%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icon_play_pause{
+        cursor: pointer;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-color);
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg{
+            position: absolute;
+
+        }
+    }
+    svg{
+        cursor: pointer;
+    }
+}
+.playing_lyrics{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    span{
+        color: #787887;
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+.icon_replay{
+    position: relative;
+}
+.icon_replay_1{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 12px;
+}
+.playlist_music{
+    flex: 1;
+}
+.now_playing{
+    flex: 1;
+}

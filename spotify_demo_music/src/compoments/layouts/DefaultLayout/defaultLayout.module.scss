@@ -1,0 +1,21 @@
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    flex: 18;
+    height: 100%;
+}
+.container{
+    flex: 82;
+    position: relative;
+    background-image: linear-gradient(#f9f9fb, #fff);
+}
+.children{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 400px;
+}
